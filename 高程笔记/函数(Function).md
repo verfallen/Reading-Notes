@@ -1,4 +1,4 @@
-##函数(Function)
+## 函数(Function)
 [TOC]
 ### 创建方式
 1. 函数声明
