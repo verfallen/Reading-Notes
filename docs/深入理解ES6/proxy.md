@@ -1,11 +1,11 @@
-## 代理（Proxy）和反射（Reflection） API
-### 创建一个简单的代理
+# 代理（Proxy）和反射（Reflection） API
+## 创建一个简单的代理
 使用Proxy 构造函数创建代理需要传入两个参数：目标（target）和处理程序（handler）.处理程序是定义一个或多个陷阱的对象。
 ```
 let target = {};
 let proxy = new Proxy(target, {});
 ```
-### 使用set陷阱验证属性
+## 使用set陷阱验证属性
 + 参数说明：
 	+ trapTarget 用于接收属性（代理的目标）的对象
 	+ key 要写入的属性键（String 或 Symbol）
@@ -44,7 +44,7 @@ let proxy = new Proxy(target, {});
 	//给不存在的属性赋值将会跑出错误
 	proxy.anothername = 'proxy';
 	```
-### 用get陷阱验证对象结构
+## 用get陷阱验证对象结构
 + 参数说明：
 	+ trapTarget 代理目标
 	+ key 读取的属性键
@@ -69,7 +69,7 @@ console.log(proxy.name);  //proxy
 
 console.log(proxy.nme);   //抛出错误
 ``` 
-### 使用has陷阱隐藏已有属性
+## 使用has陷阱隐藏已有属性
 + 参数
 	+ trapTarget 读取属性的对象
 	+ key 要检查的属性键
@@ -97,7 +97,7 @@ console.log("value" in proxy);    //false
 console.log("name" in proxy);     //true
 console.log("toString" in proxy); //true 
 ```
-### 用deleteProperty 陷阱防止删除属性
+## 用deleteProperty 陷阱防止删除属性
 + 参数
 	+ trapTarget 代理的目标
 	+ key 属性键
@@ -128,12 +128,12 @@ console.log(result1);             //false
 
 console.log("value" in proxy);     //true
 ```
-### 原型代理陷阱
+## 原型代理陷阱
 `setPrototypeOf`接受以下参数
 
 +  trapTargert 代理的目标
 + proto 作为原型使用的对象
-#### 原型代理陷阱的运行机制
+## 原型代理陷阱的运行机制
 原型代理陷阱的机制：
 + `getPrototypeOf`必须返回对象或`null`,只要是返回值就会导致运行错误
 + `setPrototypeOf`如果操作失败则返回`false`，只要返回不是`false`的值，则假设操作成功。
@@ -183,10 +183,10 @@ Object.setPrototypeOf(proxy, {});                //报错
 	console.log(target2 === result2);   //false
 	console.log(result2);               //ture
 	```
-### 对象可扩展性陷阱
+## 对象可扩展性陷阱
 ES6可以通过代理中的`preventExtensions`和`isExtensible`陷阱拦截这两个方法并调用底层对象，均接受唯一参数trapTarget对象，并且均返回布尔值。`isExtensible`表示对象是否可扩展，`preventExtensions`表示操作是否成功。
 区别：传入非对象值时，`Object.isExtensible()`返回`false`，而`Reflect.isExtensible()`则抛出错误。相对于高级方法而言，底层具有更严格的错误检查。
-### 属性描述符陷阱
+## 属性描述符陷阱
 在代理中分别可以使用`defineProperty`陷阱和`getOwnPropertyDescriptor`陷阱拦截`Object.defineProperty()`和`Object.getOwnPropertyDescriptor()`方法的调用。
 
 + `defineProperty()`
