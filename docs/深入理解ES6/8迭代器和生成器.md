@@ -1,0 +1,158 @@
+## 迭代器和生成器
+### 迭代器
+定义：一种特殊对象，它具有一些专门为迭代过程设计的专有接口，所有的迭代对象都有一个next()方法，每次调用都返回一个结果对象。结果对象有两个属性：value表示下一个将要返回的值，done表示是否有更多数据。还保存一个内部指针，用于指向当前集合中值得位置。
+### 生成器：
+定义：一种返回迭代器的函数，通过`funciton`关键字后的星号（*）来表示，函数中会用到新的关键字`yield`。星号可以紧挨着`function`关键字，也可以在中间添加一个空格。
+#### `yield`
+用途：通过它来指定调用迭代器的next()方法时的返回值及返回顺序。
+使用限制：只可在生成器内部使用，即使在生成器内部的函数里使用也会报错。`yield`关键字不能穿透函数边界。
+### 可迭代对象和for-of循环
+**可迭代对象定义**：具有`Symbol.iterator`属性，是一种与迭代器密切相关的对象。  
+**for-of循环原理**：每执行一次都会调用可迭代对象的`next()`方法，并将迭代器返回的结果对象的`value`属性存储在变量中，循环将持续执行这一过程直到返回的对象`done`属性的值为true。  
+**访问默认迭代器**：通过`Symbol.iterator`来访问对象默认的迭代器。  
+**创建可迭代对象**：给自定义对象的`Symbol.iterator`属性添加一个生成器
+```
+let collection = {
+  items:[],
+  *[Symbol.iterator](){
+  	for(let item of this.items){
+      yield item;
+    }
+  }
+};
+
+collection.items.push(1);
+collection.items.push(2);
+collection.items.push(3);
+
+for(let x of collection){
+	console.log(x);
+}
+```
+### 内建迭代器
+集合对象：数组、`Map`集合与`Set`集合
+内建迭代器：
+
+- 集合对象迭代器：
+ + `entries()` 其值为多个键值对
+ + `values()` 返回值为集合的值
+ + `keys()`其值为集合中所有键名
+-   字符串迭代器
+-  `NodeList` 迭代器
+### 高级迭代器功能
+#### 给迭代器传递参数：给迭代器的`next()`方法传递参数，那么这个参数就会替代生成器内部上一条`yield`语句的返回值。第一次调用`next()`方法无论传入什么参数都会被丢弃。
+```
+function *createIterator(){
+	let first = yield 1;
+  let second = yield first + 2;
+  yield second +3;
+}
+
+let iterator = createIterator();
+
+console.log(iterator.next());   //{value: 1, done: false}
+console.log(iterator.next(4));  //{value: 6, done: false}
+console.log(iterator.next(5));  //{value: 8, done: false}
+console.log(iterator.next());   //{value: undefined, done: true}
+```
+#### 手动抛出错误：将错误对象传给`throw`方法后，在迭代内继续执行时会被抛出。通过调用`throw()`方法后也会像调用`next()`方法一样返回一个结果对象
+```
+function *createIterator(){
+	let first = yield 1;
+  let second;
+  try{
+  	second = yield first + 2;
+  }catch(ex){
+  	second = 6;
+  }
+  yield second +3;
+}
+
+let iterator = createIterator();
+
+console.log(iterator.next());	//{value: 1, done: false}
+console.log(iterator.next(4));	//{value: 6, done: false}
+console.log(iterator.throw(new Error("boom")));		//{value: 9, done: false}
+console.log(iterator.next());	//{value: undefined, done: true}
+```
+#### 生成器返回语句：`return`表示所有的操作已经完成，属性`done`被设置为`true`。
+#### 委托生成器
+```
+function *createNumberIterator(){
+	yield 1;
+  yield 2;
+  return 3;
+}
+
+function *createRepeatingIterator(count){
+	for(let i = 0;i<count;i++){
+  	yield 'repeat';
+  }
+}
+
+function *createCombineIterator(){
+	let result = yield *createNumberIterator();
+  yield * createRepeatingIterator(result);
+}
+
+var iterator = createCombineIterator();
+
+console.log(iterator.next());	//{value: 1, done: false}
+console.log(iterator.next());	//{value: 2, done: false}
+console.log(iterator.next());	//{value: "repeat", done: false}
+console.log(iterator.next());	//{value: "repeat", done: false}
+console.log(iterator.next());	//{value: "repeat", done: false}
+console.log(iterator.next());	//{value: undefined, done: true}
+```
+### 异步任务执行
+#### 简单任务执行器
+```
+function run(taskDef){
+  let task = taskDef();
+  let result = task.next();
+
+  function step(){
+    if(!result.done){
+      result = task.next();
+      step();
+    }
+  }
+
+  step();
+}
+
+run(function*(){
+  console.log(1); //1
+  yield;
+  console.log(2); //2
+  yield;
+  console.log(3); //3
+});
+```
+#### 向任务执行器传递数据
+最简单的办法：将值通过迭代器的`next()`方法传入作为`yield`的生成值供下次调用。
+此例中，将`result.value`作为`next()`方法的参数被传入，即可实现在`yield`调用之间传递数据。
+```
+function run(taskDef){
+  let task = taskDef();
+  let result = task.next();
+
+  function step(){
+    if(!result.done){
+      result = task.next(result.value);
+      step();
+    }
+  }
+
+  step();
+}
+
+run(function*(){
+  let value = yield 1;
+  console.log(value); //1
+
+  value = yield value + 3;
+  console.log(value); //4
+});
+```
+#### 异步任务执行器
