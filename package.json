@@ -1,0 +1,22 @@
+{
+  "name": "reading-notes",
+  "version": "1.0.0",
+  "description": "读书笔记",
+  "main": "index.js",
+  "scripts": {
+    "lint":"markdownlint docs/**/*.md --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verfallen/Reading-Notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verfallen/Reading-Notes/issues"
+  },
+  "homepage": "https://github.com/verfallen/Reading-Notes#readme",
+  "devDependencies": {
+    "markdownlint-cli": "^0.13.0"
+  }
+}
