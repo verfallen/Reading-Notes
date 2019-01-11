@@ -26,7 +26,7 @@ var sum = function(num1, num2) {
 var sum = new Function("num1", "num2", "return num1 + num2");
 ```
 
-##函数的使用
+## 函数的使用
 
 ## 函数作为值
 
@@ -74,7 +74,7 @@ function crateSortFunction(name) {
 - 闭包使用时，`this`指向全局对象
   `javascript var obj = { name: "obj", getName() { return function(){ console.log(this); } } }; var temp = { name: "temp" }; obj.getName()(); // "temp"`
 
-##`caller`调用当前函数的函数引用
+## `caller`调用当前函数的函数引用
 
 ## 函数属性和方法
 

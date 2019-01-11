@@ -34,6 +34,7 @@ console.log(window.foo === foo); // true
    ```
 
 2. 访问未定义变量会报错，访问`window`未定义属性返回`undefined`
+
    ```javascript
    obj; // Uncaught ReferenceError: obj is not defined
    window.obj; //underfined
@@ -54,7 +55,7 @@ console.log(window.foo === foo); // true
 `screenLeft`:窗口相对于左边的位置
 在**FireFox** 中，`screenX`和`screenY`属性提供与上述相同的窗口位置信息。
 
-**跨浏览器取得窗口左边和上边的位置（非精确值）**
+**跨浏览器取得窗口左边和上边的位置（非精确值）**：
 
 ```javascript
 var left = typeof (window.screenLeft === "number")
@@ -100,7 +101,7 @@ if (typeof pageWidth === "number") {
 
 ## 导航和打开窗口
 
-**方法及属性**
+**方法及属性**：
 
 - `window.open()`导航到一个既定的`url`，并返回一个指向新窗口的引用
 - `window.close()` 关闭新打开的窗口，仅适用于通过`window.open`打开的弹出窗口
@@ -175,15 +176,15 @@ clearInterval(timer);
 属性名 | 说明 | 内容
 ------| ------|------
 `hash`|url 中`#`后紧跟的字符串，如果没有则是空字符串 | ""
-`host`| 服务器名称和端口号 | "www.baidu.com"
-`hostname`| 不带端口号的服务器名称 | "www.baidu.com"
-`href`| 当前加载页面的完整`url` | "https://www.baidu.com/s?keyword=javascript"
+`host`| 服务器名称和端口号 | [www.baidu.com](www.baidu.com)
+`hostname`| 不带端口号的服务器名称 | [www.baidu.com](www.baidu.com)
+`href`| 当前加载页面的完整`url` | [https://www.baidu.com/s?keyword=javascript](https://www.baidu.com/s?keyword=javascript)
 `pathname`|目录和文件名| "/s"
 `port`|端口号 | ""
 `protocol`| 协议，通常是`http:`或`https` |"https:"
 `search`| 以?开头查询字符串 | "?keyword=javascript"
 
-**查询字符串参数**
+**查询字符串参数**：
 
 ```javascript
 function getQueryStringArgs(){
