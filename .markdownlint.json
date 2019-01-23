@@ -4,6 +4,8 @@
   "MD033": false,
   "MD040": false,
   "MD010": false,
-  "no-hard-tabs": false
+  "no-duplicate-heading": false,
+  "ol-prefix": false,
+  "no-emphasis-as-heading":false
 }
 
