@@ -38,10 +38,11 @@ git commit -am "commit"
 git commit --amend
 
 # 定位提交
+git rev-parse <commit>
+
 # 符号：
 #  ~ ：用 ~ 符号数量的堆砌或者~数量的写法定位第几代父 commit
 #  ^ : 用 ^ 数量的写法定位第几个父 commit ，用 ^^ 则表示第一个父 commit 的第一个父 commit
-git rev-parse <commit>
 ```
 
 ### 分支
@@ -79,7 +80,7 @@ git checkout commit
 git checkout -b <branch>
 
 # 撤销文件工作区改动
-git checkout -b <file>
+git checkout -- <file>
 ```
 
 ### 变基
@@ -311,4 +312,7 @@ git remote rename <old-name> <new-name>
 
 # 删除远端仓库
 git remote rm horseshoe
+
+# 给本地项目添加仓库地址
+git remote add <url>
 ```
