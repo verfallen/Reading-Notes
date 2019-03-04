@@ -4,6 +4,6 @@
   "MD033": false,
   "MD040": false,
   "MD010": false,
-  "no-hard-tabs": false
+  "no-hard-tabs": false,
+  "no-duplicate-heading": false
 }
-
