@@ -14,6 +14,7 @@
 - [九、客户端检测](./docs/高程笔记/九、客户端检测.md)
 - [十、DOM对象](./docs/高程笔记/十、DOM.md)
 - [十一、DOM扩展.md](./docs/高程笔记/11DOM扩展.md)
+- [十二、DOM2 和 DOM3](./docs\高程笔记\12.DOM2和DOM3\12.DOM2和DOM3.md)
 
 ---
 
