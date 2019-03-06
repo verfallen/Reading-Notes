@@ -28,3 +28,4 @@ git
 
 - [1.开篇](./docs/lessons/relearn-front-end-1.md)
 - [2.学习路线和方法](./docs/lessons/relearn-front-end-2.md)
+- [3.前端知识架构](./docs/lessons/relearn-front-end-3/relearn-front-end-3.md)
