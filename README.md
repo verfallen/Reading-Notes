@@ -27,3 +27,4 @@ git
 重学前端笔记
 
 - [1.开篇](./docs/lessons/relearn-front-end-1.md)
+- [2.学习路线和方法](./docs/lessons/relearn-front-end-2.md)
