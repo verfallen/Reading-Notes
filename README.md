@@ -33,3 +33,4 @@ git
 - [5.语义标签-呈现`wiki`网页](./docs/lessons/relearn-front-end-5/relearn-front-end-5.md)
 - [6.JavaScript类型-类型细节](./docs/lessons/relearn-front-end-6/relearn-front-end-6.md)
 - [7.JavaScript对象](./docs/lessons/relearn-front-end-7.md)
+- [8.JavaScript对象：我们真的需要模拟类吗？](./docs/lessons/relearn-front-end-8.md)
