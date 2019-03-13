@@ -32,3 +32,4 @@ git
 - [4.语义标签-div 和 span 不是够用了吗？](./docs/lessons/relearn-front-end-4.md)
 - [5.语义标签-呈现`wiki`网页](./docs/lessons/relearn-front-end-5/relearn-front-end-5.md)
 - [6.JavaScript类型-类型细节](./docs/lessons/relearn-front-end-6/relearn-front-end-6.md)
+- [7.JavaScript对象](./docs/lessons/relearn-front-end-7.md)
