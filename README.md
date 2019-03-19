@@ -38,4 +38,5 @@ git
 - [9.JavaScript对象-全部对象分类](./docs/lessons/relearn-front-end-9/relearn-front-end-9.md)
 - [10.CSS语法](./docs/lessons/relearn-front-end-10.md)
 - [11.浏览器工作原理-HTTP协议](./docs/lessons/relearn-front-end-11/relearn-front-end-11.md)
+- [12.浏览器-解析`HTML`代码，构建`DOM`树](./docs/lessons/relearn-front-end-12/relearn-front-end-12.md)
 
