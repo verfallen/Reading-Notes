@@ -31,7 +31,7 @@
    - `bind` 后的 `function`：跟原来的函数相关联。
 10. **全局对象的属性**
     三个值：`Infinity`、`NaN`、`undefined`
-    九个函数：`eval`, `isFinite`, `isNaN` ,`parseFloat`,`parseInt`,`decodeURI`,`decodeURIComponent`,` encodeURI``encodeURIComponent `
+    九个函数：`eval`, `isFinite`, `isNaN` ,`parseFloat`,`parseInt`,`decodeURI`,`decodeURIComponent`,`encodeURI`,`encodeURIComponent`
     构造器：`Array`、`Date`、`RegExp`、`Promise`、`Proxy`、`Map`、`WeakMap`、`Set`、`WeapSet`、`Function`、
     `Boolean`、`String`、`Number`、`Symbol`、`Object`、`Error`、`EvalError`、`RangeError`、
     `ReferenceError`、`SyntaxError`、`TypeError`

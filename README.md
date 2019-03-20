@@ -40,5 +40,6 @@ git
 - [11.浏览器工作原理-HTTP协议](./docs/lessons/relearn-front-end-11/relearn-front-end-11.md)
 - [12.浏览器-解析`HTML`代码，构建`DOM`树](./docs/lessons/relearn-front-end-12/relearn-front-end-12.md)
 - [13.浏览器-应用css规则](./docs/lessons/relearn-front-end-13.md)
-- [14浏览器-排版](./docs/lessons/relearn-front-end-14.md)
-
+- [14.浏览器-排版](./docs/lessons/relearn-front-end-14.md)
+- [15.浏览器-渲染、合成和绘制](./docs/lessons/relearn-front-end-15.md)
+- [16.元信息标签](./docs/lessons/relearn-front-end-16.md)
