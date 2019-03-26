@@ -45,3 +45,4 @@ git
 - [16.元信息标签](./docs/lessons/relearn-front-end-16.md)
 - [17.JavaScript 执行-宏观任务和微观任务](./docs/lessons/relearn-front-end-17.md)
 - [18.JavaScript 执行-函数的执行(一)](./docs/lessons/relearn-front-end-18/relearn-front-end-18.md)
+- [19.JavaScript 执行-函数的执行(二)](./docs/lessons/relearn-front-end-19/relearn-front-end-19.md)
