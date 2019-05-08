@@ -53,3 +53,4 @@ git
 - [23.DOM API](./docs/lessons/relearn-front-end-23/relearn-front-end-23.md)
 - [30.语句](./docs/lessons/relearn-front-end-30.pdf)
 - [31.表达式](./docs/lessons/relearn-front-end-31.md)
+- [32.右值表达式](./docs/lessons/relearn-front-end-32.md)
