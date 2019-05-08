@@ -52,3 +52,4 @@ git
 - [22.CSS 机制](./docs/lessons/relearn-front-end-22/relearn-front-end-22.md)
 - [23.DOM API](./docs/lessons/relearn-front-end-23/relearn-front-end-23.md)
 - [30.语句](./docs/lessons/relearn-front-end-30.pdf)
+- [31.表达式](./docs/lessons/relearn-front-end-31.md)
