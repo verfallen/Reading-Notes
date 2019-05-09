@@ -54,3 +54,4 @@ git
 - [30.语句](./docs/lessons/relearn-front-end-30.pdf)
 - [31.表达式](./docs/lessons/relearn-front-end-31.md)
 - [32.右值表达式](./docs/lessons/relearn-front-end-32.md)
+- [33.替换型元素](./docs/lessons/relearn-front-end-33.md)
