@@ -18,5 +18,8 @@
   "homepage": "https://github.com/verfallen/Reading-Notes#readme",
   "devDependencies": {
     "markdownlint-cli": "^0.13.0"
+  },
+  "dependencies": {
+    "js-yaml": "^3.13.1"
   }
 }
