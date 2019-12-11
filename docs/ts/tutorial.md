@@ -363,3 +363,60 @@ export {};
 #### 2. 字符串字面量
 
     type EventName = "click" | 'scroll' | 'mousemove'
+
+### 二、元组
+
+不同类型的对象组成元组。
+
+    let tom：[string, number]: ['Tom',52]
+
+### 三、枚举
+
+#### 1. 定义
+
+##### 1. 自动赋值
+
+枚举成员会被赋值为从 0 开始递增的数字，同时也会对枚举值到枚举名进行反向映射。
+
+    enum Days {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
+
+##### 2. 手动赋值
+
+    enum Days {Sun = 7, Mon = 1, Tue, Wed, Thu, Fri, Sat};
+
+枚举项与手动赋值项重复，之前的值会被覆盖。
+
+    enum Days {Sun = 3, Mon = 1, Tue, Wed, Thu, Fri, Sat};
+    console.log(Days["Sun"] === 3); // true
+    console.log(Days["Wed"] === 3); // true
+    console.log(Days[3] === "Sun"); // false
+    console.log(Days[3] === "Wed"); // true
+
+枚举项可以不是数字
+
+    enum Days {Sun = 7, Mon, Tue, Wed, Thu, Fri, Sat = <any>"S"};
+
+枚举项可以设置为小数或者负数，此时，未赋值的项依然递增 1。
+
+    enum Days {Sun = 7, Mon = 1.5, Tue, Wed, Thu, Fri, Sat};
+    console.log(Days["Tue"]) //2.5
+
+#### 2.枚举项： 常数项 和 计算所得项
+
+使用计算下个
+
+```
+enum Color {Red, Green, Blue = "blue".length}; //计算所得项
+```
+
+#### 3. 常数枚举`const enum`
+
+常数枚举不能包含计算成员，会在编译阶段被删除。
+
+    const enum Directions {Up, Down, Left, Right }
+
+#### 4.外部枚举`declare enum`
+
+只用于编译时的检查
+
+    declare enum Directions {Up, Down, Left, Right}
