@@ -31,6 +31,12 @@ git
 
 ---
 
+typescript
+
+- [入门教程](./docs/ts/tutorial.md)
+
+---
+
 重学前端笔记
 
 - [1.开篇](./docs/lessons/relearn-front-end-1.md)
@@ -64,7 +70,3 @@ git
 - [36.事件](./docs/lessons/relearn-front-end-36.md)
 
 ---
-
-antd
-
-- []
