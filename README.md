@@ -7,8 +7,9 @@
 
 ---
 
-高程笔记
+JavaScript 高级程序设计阅读笔记
 
+- [2.HTML 中的 JavaScript](./docs/高程笔记/2.在HTML中的JavaScript.md)
 - [正则表达式](./docs/高程笔记/正则表达式（RegExp）.md)
 - [函数](./docs/高程笔记/function.md)
 - [四、变量、作用域和内存问题](./docs/高程笔记/四、变量、作用域和内存问题.md)
