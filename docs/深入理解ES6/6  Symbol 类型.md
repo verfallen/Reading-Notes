@@ -53,6 +53,6 @@ console.log(message);               //["hi", "hello", "world"]
 
 ## `Symbol.toPrimitive`：返回对象原始值
 
-## `Symbol.toStringTag`：一个在调用 Object.prototype.toString()方法时使用的字符串，用于创建对象描述。
+## `Symbol.toStringTag`：一个在调用 Object.prototype.toString()方法时使用的字符串，用于创建对象描述
 
-## `Symbol.unscopables`:定义一些不可被`with`语句引用的对象属性名称的对象集合。
+## `Symbol.unscopables`:定义一些不可被`with`语句引用的对象属性名称的对象集合
